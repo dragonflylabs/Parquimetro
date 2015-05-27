@@ -10,9 +10,15 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ListView;
+
+import java.util.ArrayList;
 
 import butterknife.ButterKnife;
+import butterknife.InjectView;
 import dflabs.io.parquimetro.R;
+import dflabs.io.parquimetro.adapters.PaysAdapter;
+import dflabs.io.parquimetro.models.Pay;
 import io.card.payment.CardIOActivity;
 
 /**
@@ -21,6 +27,7 @@ import io.card.payment.CardIOActivity;
 public class PaysFragment extends Fragment{
 
     private int MY_SCAN_REQUEST_CODE = 0x00456;
+    @InjectView(R.id.fr_pays_list) ListView paysListView;
 
     @Nullable
     @Override
@@ -34,6 +41,11 @@ public class PaysFragment extends Fragment{
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         setHasOptionsMenu(true);
+        ArrayList<Pay> pays = new ArrayList<Pay>();
+        for(int i = 0; i < 100; i++){
+            pays.add(new Pay());
+        }
+        paysListView.setAdapter(new PaysAdapter(getActivity(), R.layout.item_pay, pays));
     }
 
     @Override
