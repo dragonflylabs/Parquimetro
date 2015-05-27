@@ -16,18 +16,20 @@
         <ImageView
             android:layout_marginTop="5dp"
             android:layout_width="200sp"
-            android:layout_height="250sp"
+            android:layout_height="200sp"
             android:layout_gravity="center"
-            android:scaleType="centerCrop"
+            android:scaleType="fitCenter"
             android:padding="10dp"
             android:layout_marginBottom="5dp"
             android:src="@drawable/logo_1"
             android:id="@+id/logo" />
         <EditText
+            android:gravity="center"
             style="@style/input"
             android:hint="Usuario"
             android:id="@+id/user" />
         <EditText
+            android:gravity="center"
             style="@style/input"
             android:hint="Contraseña"
             android:id="@+id/act_login_edt_password"
@@ -67,6 +69,7 @@
             android:orientation="horizontal"
             android:weightSum="1">
             <Button
+                android:layout_margin="8dp"
                 android:fontFamily="sans-serif-light"
                 android:id="@+id/act_login_btn_register"
                 android:layout_width="0dp"
@@ -89,7 +92,8 @@
                 android:layout_height="wrap_content"
                 android:text="Recuperar contraseña"
                 android:textAllCaps="false"
-                android:gravity="right"
+                android:layout_margin="8dp"
+                android:gravity="right|center_vertical"
                 android:paddingRight="6dp"/>
         </LinearLayout>
     </LinearLayout>
