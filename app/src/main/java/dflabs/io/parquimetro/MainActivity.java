@@ -58,7 +58,6 @@ public class MainActivity extends SlidingFragmentActivity {
                 .replace(R.id.menu_frame, new MenuFragment())
                 .commit();
         getSlidingMenu().setTouchModeAbove(SlidingMenu.TOUCHMODE_MARGIN);
-        getActionBar().setDisplayHomeAsUpEnabled(true);
     }
 
     public void switchContent(final Fragment fragment) {

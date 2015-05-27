@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Lennken</string>
+    <string name="__dialog_loading">Cargando...</string>
+    <string name="__dialog_accept">Aceptar</string>
+    <string name="__dialog_uploading">Subiendo...</string>
+    <string name="__dialog_title_gps">GPS</string>
+    <string name="__dialog_gps_activate">El GPS no está habilitado, ¿desea encenderlo?</string>
+    <string name="__dialog_cancel">Cancelar</string>
+</resources>
