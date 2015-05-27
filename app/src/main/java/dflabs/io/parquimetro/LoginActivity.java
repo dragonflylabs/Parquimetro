@@ -27,8 +27,8 @@ public class LoginActivity extends Activity {
         NotificationCompat.Builder mBuilder =
                 new NotificationCompat.Builder(this)
                         .setSmallIcon(R.mipmap.ic_launcher)
-                        .setContentTitle("Parking Alert! ")
-                        .setContentText("There are a parking space near to you!");
+                        .setContentTitle("There is a parking space near to you!")
+                        .setContentText("See more");
         Intent resultIntent = new Intent(this, LoginActivity.class);
         TaskStackBuilder stackBuilder = TaskStackBuilder.create(this);
         stackBuilder.addParentStack(LoginActivity.class);

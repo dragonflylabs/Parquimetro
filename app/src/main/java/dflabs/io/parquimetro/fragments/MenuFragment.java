@@ -36,9 +36,13 @@ public class MenuFragment extends Fragment {
         MainActivity activity = (MainActivity) getActivity();
         switch (position){
             case 0: activity.switchContent(new MapsFragment());
+                break;
             case 1: activity.switchContent(new PaysFragment());
+                break;
             case 2: activity.switchContent(new CalendarFragment());
+                break;
             case 3: activity.switchContent(new SettingsFragment());
+                break;
         }
     }
 

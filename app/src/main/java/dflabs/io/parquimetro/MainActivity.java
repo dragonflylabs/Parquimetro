@@ -74,7 +74,6 @@ public class MainActivity extends SlidingFragmentActivity {
         }
         getSupportFragmentManager()
                 .beginTransaction()
-                .addToBackStack(null)
                 .replace(R.id.content_frame, fragment)
                 .commit();
         getSlidingMenu().showContent();
