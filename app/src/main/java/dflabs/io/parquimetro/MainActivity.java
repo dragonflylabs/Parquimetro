@@ -41,7 +41,7 @@ public class MainActivity extends SlidingFragmentActivity {
         sm.setBehindOffsetRes(R.dimen.slidingmenu_offset);
         sm.setFadeDegree(0.35f);
         sm.setMode(SlidingMenu.LEFT);
-        getActionBar().setDisplayHomeAsUpEnabled(true);
+
         if (savedInstanceState != null)
             mContent = getSupportFragmentManager().getFragment(savedInstanceState, "mContent");
         if (mContent == null)

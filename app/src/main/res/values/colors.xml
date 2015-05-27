@@ -6,5 +6,9 @@
     <color name="white">#FFF</color>
     <color name="black">#000</color>
     <color name="park_default_color">#712734</color>
+    <color name="park_default_color_alpha">#89712734</color>
     <color name="brown">#5B3F33</color>
+    <color name="park_default_accent">#8F2B45</color>
+    <color name="park_default_contrast">#F4D4AD</color>
+    <color name="park_default_secondary">#F36A33</color>
 </resources>
