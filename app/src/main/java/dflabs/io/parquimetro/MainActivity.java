@@ -22,6 +22,7 @@ import com.jeremyfeinstein.slidingmenu.lib.app.SlidingFragmentActivity;
 
 import java.util.HashMap;
 
+import dflabs.io.parquimetro.fragments.MapsFragment;
 import dflabs.io.parquimetro.fragments.MenuFragment;
 
 
@@ -44,7 +45,7 @@ public class MainActivity extends SlidingFragmentActivity {
         if (savedInstanceState != null)
             mContent = getSupportFragmentManager().getFragment(savedInstanceState, "mContent");
         if (mContent == null)
-            mContent = new Fragment();
+            mContent = new MapsFragment();
 
         setContentView(R.layout.content_frame);
         getSupportFragmentManager()
@@ -57,9 +58,10 @@ public class MainActivity extends SlidingFragmentActivity {
                 .replace(R.id.menu_frame, new MenuFragment())
                 .commit();
         getSlidingMenu().setTouchModeAbove(SlidingMenu.TOUCHMODE_MARGIN);
+        getActionBar().setDisplayHomeAsUpEnabled(true);
     }
 
-    public void switchContent(final Fragment fragment, boolean asking) {
+    public void switchContent(final Fragment fragment) {
         if (mContent.getClass() == fragment.getClass()) {
             getSlidingMenu().showContent();
             return;
@@ -78,4 +80,18 @@ public class MainActivity extends SlidingFragmentActivity {
         super.onActivityResult(requestCode, resultCode, data);
     }
 
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if(item.getItemId() == android.R.id.home){
+            toggle();
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.main, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
 }
