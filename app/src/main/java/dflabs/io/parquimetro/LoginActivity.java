@@ -26,9 +26,9 @@ public class LoginActivity extends Activity {
         ButterKnife.inject(this);
         NotificationCompat.Builder mBuilder =
                 new NotificationCompat.Builder(this)
-                        .setSmallIcon(R)
-                        .setContentTitle("Parking Alert! ")
-                        .setContentText("There are a parking space near to you!");
+                        .setSmallIcon(R.mipmap.ic_launcher)
+                        .setContentTitle("There is a parking space near to you!")
+                        .setContentText("See more");
         Intent resultIntent = new Intent(this, LoginActivity.class);
         TaskStackBuilder stackBuilder = TaskStackBuilder.create(this);
         stackBuilder.addParentStack(LoginActivity.class);
