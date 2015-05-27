@@ -7,6 +7,7 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.content.res.Resources;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
@@ -15,6 +16,7 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.jeremyfeinstein.slidingmenu.lib.SlidingMenu;
@@ -42,7 +44,11 @@ public class MainActivity extends SlidingFragmentActivity {
         sm.setFadeDegree(0.35f);
         sm.setMode(SlidingMenu.LEFT);
         getActionBar().setDisplayHomeAsUpEnabled(true);
-        getActionBar().setHomeAsUpIndicator(getDrawable(R.mipmap.ic_drawer));
+        int upId = Resources.getSystem().getIdentifier("up", "id", "android");
+        if (upId > 0) {
+            ImageView up = (ImageView) findViewById(upId);
+            up.setImageResource(R.mipmap.ic_drawer);
+        }
         if (savedInstanceState != null)
             mContent = getSupportFragmentManager().getFragment(savedInstanceState, "mContent");
         if (mContent == null)

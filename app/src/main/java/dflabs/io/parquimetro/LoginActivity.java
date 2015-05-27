@@ -8,6 +8,9 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
+import butterknife.ButterKnife;
+import butterknife.OnClick;
+
 
 public class LoginActivity extends Activity {
 
@@ -15,8 +18,11 @@ public class LoginActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+        getActionBar().hide();
+        ButterKnife.inject(this);
     }
-    public void cambiar(View v){
+
+    @OnClick(R.id.act_login_btn_login) void onLoginClick(View v){
         Intent i  = new Intent(this,MainActivity.class);
         startActivity(i);
     }
