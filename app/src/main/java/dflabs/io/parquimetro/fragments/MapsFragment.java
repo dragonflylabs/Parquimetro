@@ -11,10 +11,13 @@ import android.view.ViewGroup;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
+
+import java.util.Random;
 
 import butterknife.ButterKnife;
 import dflabs.io.parquimetro.R;
@@ -78,11 +81,35 @@ public class MapsFragment extends Fragment {
             LatLng latLng = new LatLng(mLocation.getLatitude(), mLocation.getLongitude());
             if (mMarkerPosition == null) {
                 mMarkerPosition = mMap.addMarker(new MarkerOptions().position(latLng).title("Mi posición"));
-                mMap.moveCamera(CameraUpdateFactory.newCameraPosition(CameraPosition.fromLatLngZoom(latLng, 12)));
+                mMap.moveCamera(CameraUpdateFactory.newCameraPosition(CameraPosition.fromLatLngZoom(latLng, 14)));
+                generateParks(latLng);
             } else {
                 mMarkerPosition.setPosition(latLng);
             }
         }
 
+    }
+
+    private void generateParks(LatLng latLng) {
+        int max = 50;
+        double maxLatitude = latLng.latitude + 0.015;
+        double maxLongitude = latLng.longitude + 0.015;
+        for(int i = 0; i < max; i++){
+            LatLng newLatLng = new LatLng(
+                    randomInRange(latLng.latitude, maxLatitude),
+                    randomInRange(latLng.longitude, maxLongitude)
+            );
+            mMap.addMarker(new MarkerOptions().position(newLatLng).title("Parquímetro")
+                    .icon(BitmapDescriptorFactory.fromResource(R.mipmap.ic_pin)));
+        }
+    }
+
+    protected static Random random = new Random();
+
+    public static double randomInRange(double min, double max) {
+        double range = max - min;
+        double scaled = random.nextDouble() * range;
+        double shifted = scaled + min;
+        return shifted; // == (rand.nextDouble() * (max-min)) + min;
     }
 }
