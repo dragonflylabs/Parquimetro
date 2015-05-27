@@ -1,17 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/park_default_accent">
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="150dp"
         android:background="@color/brown">
         <ImageView
-            android:layout_width="64dp"
-            android:layout_height="64dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@mipmap/img_background_profile"
+            android:scaleType="centerCrop"/>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/park_default_color_alpha"></View>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="12dp"
+            android:orientation="horizontal"
             android:layout_alignParentBottom="true"
-            android:layout_alignParentLeft="true"
-            android:layout_margin="12dp"/>
+            android:layout_alignParentLeft="true">
+            <ImageView
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:src="@mipmap/img_profile_pic"/>
+            <TextView
+                android:layout_marginLeft="8dp"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:textColor="@color/white"
+                android:fontFamily="sans-serif-medium"
+                android:textSize="18sp"
+                android:text="Sara Danielle García Martínez"/>
+        </LinearLayout>
     </RelativeLayout>
     <ListView
         android:id="@+id/fr_menu_list"
