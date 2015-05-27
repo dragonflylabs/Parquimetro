@@ -29,5 +29,23 @@
         parent="@android:style/Widget.Holo.ActionBar.TabText">
         <item name="android:textColor">@color/white</item>
     </style>
-
+    <style name="input" parent="@android:style/TextAppearance.Medium">
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">48dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:background">#7AFFFFFF</item>
+        <item name="android:layout_marginBottom">8dp</item>
+        <item name="android:layout_marginLeft">15dp</item>
+        <item name="android:layout_marginRight">15dp</item>
+        <item name="android:textColorHint">#000000</item>
+    </style>
+    <style name="fb_btn">
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">48dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">#FFFFFF</item>
+        <item name="android:paddingLeft">20dp</item>
+        <item name="android:background">#2a3961</item>
+        <item name="android:layout_marginBottom">8dp</item>
+    </style>
 </resources>
