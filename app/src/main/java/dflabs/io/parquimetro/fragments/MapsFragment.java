@@ -96,11 +96,11 @@ public class MapsFragment extends Fragment {
         double maxLongitude = latLng.longitude + 0.015;
         for(int i = 0; i < max; i++){
             LatLng newLatLng = new LatLng(
-                    randomInRange(latLng.latitude, maxLatitude),
-                    randomInRange(latLng.longitude, maxLongitude)
+                    randomInRange(latLng.latitude - 0.015, maxLatitude),
+                    randomInRange(latLng.longitude - 0.015, maxLongitude)
             );
             mMap.addMarker(new MarkerOptions().position(newLatLng).title("Parquímetro")
-                    .icon(BitmapDescriptorFactory.fromResource(R.mipmap.ic_pin)));
+                    .icon(BitmapDescriptorFactory.fromResource(i % 2 == 0 ? R.mipmap.ic_pin : R.mipmap.ic_pin_private)));
         }
     }
 
